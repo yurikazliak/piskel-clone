@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="https://apis.google.com/js/platform.js" async defer></script>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+    integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+  <title>Piskel Clone</title>
+</head>
+
+<body>
+  <header>
+    <p>Piskel Clone</p>
+    <div class="google-authorization">
+      <button class="sign-in-button">Sign in</button>
+      <button class="sign-out-button">Sign out</button>
+      <div class="user-info">
+        <img class="user-picture">
+        <div class="user-name"></div>
+      </div>
+    </div>
+  </header>
+  <main>
+    <div class="left-side">
+
+      <div class="palette">
+        <div class="tools">
+          <button class="pen" title="Pen tool (P)"><i class="fas fa-pencil-alt"></i></button>
+          <button class="paint-bucket" title="Paint Bucket (B)"><i class="fas fa-fill"></i></button>
+          <button class="eraser" title="Eraser (E)"><i class="fas fa-eraser"></i></i></button>
+          <button class="paint-all-pixels" title="Paint all pixels (A)"><i
+              class="fas fa-fill-drip"></i></button>
+          <button class="draw-stroke" title="Draw stroke (S)"><i class="fas fa-pencil-ruler"></i></button>
+          <!-- <button class="draw-rectangle"><i class="fas fa-vector-square"></i></button>
+          <button class="draw-circle"><i class="far fa-circle"></i></button>
+          <button class="move"><i class="fas fa-arrows-alt"></i></button>
+          <button class="shape-selection"><i class="fas fa-shapes"></i></button> -->
+          <button class="lighten-tool" title="Lighten (LMB) (L), Darker (RMB)"><i class="fas fa-adjust"></i></button>
+          <button class="dithering-tool" title="Dithering (D)"><i class="fas fa-chess-board"></i></button>
+          <button class="color-picker" title="Color picker (C)"><i class="fas fa-eye-dropper"></i></button>
+        </div>
+
+      </div>
+      <div class="colors">
+        <div class="color-picker-wrapper" title="Color change">
+          <div class="primary-color" title="Primary color, LMB">
+            <input type="color" id="primary-color" value="#C15C05">
+          </div>
+          <div class="secondary-color" title="Secondary color, RMB">
+            <input type="color" id="secondary-color" value="#5C0FF5">
+          </div>
+        </div>
+      </div>
+      <div class="shortcuts-modal" title="Change shortcuts"><i class="far fa-keyboard"></i></div>
+    </div>
+
+    <div class="center">
+      <div class="frame-container">
+        <div class="frame on-action" id="selected" data="1">
+          <button class="frame-number-button" title="Frame number">1</button>
+          <button class="delete-frame-button" title="Delete frame (R)"><i class="fas fa-trash"></i></button>
+          <button class="duplicate-frame-button" title="Duplicate frame (O)"><i class="far fa-copy"></i></button>
+          <button class="move-frame-button" title="Move frame"><i class="fas fa-expand-arrows-alt"></i></button>
+          <canvas class="frame-back" width="128" height="128"></canvas>
+        </div>
+        <div class="add-new-frame" title="Add new frame (N)">
+          <i class="fas fa-plus"></i>
+          <div class="title">
+            Add new frame
+          </div>
+        </div>
+      </div>
+      <div class="drawing-container">
+        <canvas class="draw-area" width="512" height="512"></canvas>
+      </div>
+
+
+    </div>
+
+    <div class="right-side">
+      <div class="animation-preview">
+        <div class="animation-block">
+        </div>
+      </div>
+      <div class="framerate">
+        <div class="change-fps">
+          <div class="show-fps"></div>
+          <input class="fps-slider" type="range" min="0" max="24">
+        </div>
+      </div>
+      <button class="full-screen" id="full">Show in full screen</button>
+      <div class="tips">
+        <div class="canvas-size"></div>
+        <div class="cursor-coordinates"></div>
+      </div>
+      <div class="scale-choose">
+        <div class="scale-about">
+          <p>Choose size of palette :</p>
+        </div>
+        <div class="size-buttons">
+          <button id="scale32">32</button>
+          <button id="scale64">64</button>
+          <button id="scale128">128</button>
+        </div>
+
+      </div>
+      <div class="export-wrapper">
+        <button class="save-button-gif">Export as .gif</button>
+        <button class="save-button-apng">Export as .apng</button>
+      </div>
+    </div>
+
+  </main>
+<script type="text/javascript" src="app.bundle.js"></script></body>
+
+</html>
