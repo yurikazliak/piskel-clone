@@ -9,12 +9,12 @@
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
     integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
   <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-  <title>Piskel Clone</title>
+  <title>Piskel-clone by Yuri Kazliak</title>
 </head>
 
 <body>
   <header>
-    <p>Piskel Clone</p>
+    <h1>Piskel-clone</h1>
     <div class="google-authorization">
       <button class="sign-in-button">Sign in</button>
       <button class="sign-out-button">Sign out</button>
@@ -30,15 +30,15 @@
       <div class="palette">
         <div class="tools">
           <button class="pen" title="Pen tool (P)"><i class="fas fa-pencil-alt"></i></button>
+          <button class="vertical-mirror-pen-tool" title="Vertical mirror pen (M)"><i
+              class="fas fa-grip-lines-vertical"></i></button>
           <button class="paint-bucket" title="Paint Bucket (B)"><i class="fas fa-fill"></i></button>
-          <button class="eraser" title="Eraser (E)"><i class="fas fa-eraser"></i></i></button>
-          <button class="paint-all-pixels" title="Paint all pixels (A)"><i
-              class="fas fa-fill-drip"></i></button>
+          <button class="paint-all-pixels" title="Paint all pixels (A)"><i class="fas fa-tint"></i></button>
           <button class="draw-stroke" title="Draw stroke (S)"><i class="fas fa-pencil-ruler"></i></button>
-          <!-- <button class="draw-rectangle"><i class="fas fa-vector-square"></i></button>
-          <button class="draw-circle"><i class="far fa-circle"></i></button>
-          <button class="move"><i class="fas fa-arrows-alt"></i></button>
-          <button class="shape-selection"><i class="fas fa-shapes"></i></button> -->
+          <button class="draw-rectangle" title="Draw rectangle (U)"><i class="fas fa-vector-square"></i></button>
+          <button class="draw-circle" title="Draw circle (I)"><i class="far fa-circle"></i></button>
+          <button class="opposite-color" title="Change all color's to opposite (Y)"><i class="fas fa-sync"></i></button>
+          <button class="eraser" title="Eraser (E)"><i class="fas fa-eraser"></i></i></button>
           <button class="lighten-tool" title="Lighten (LMB) (L), Darker (RMB)"><i class="fas fa-adjust"></i></button>
           <button class="dithering-tool" title="Dithering (D)"><i class="fas fa-chess-board"></i></button>
           <button class="color-picker" title="Color picker (C)"><i class="fas fa-eye-dropper"></i></button>
@@ -78,6 +78,17 @@
         <canvas class="draw-area" width="512" height="512"></canvas>
       </div>
 
+      <div class="scale-choose">
+        <div class="scale-about">
+          <p>Size of palette :</p>
+        </div>
+        <div class="size-buttons">
+          <button id="scale32">32</button>
+          <button id="scale64">64</button>
+          <button id="scale128">128</button>
+        </div>
+
+      </div>
 
     </div>
 
@@ -97,20 +108,20 @@
         <div class="canvas-size"></div>
         <div class="cursor-coordinates"></div>
       </div>
-      <div class="scale-choose">
-        <div class="scale-about">
-          <p>Choose size of palette :</p>
-        </div>
-        <div class="size-buttons">
-          <button id="scale32">32</button>
-          <button id="scale64">64</button>
-          <button id="scale128">128</button>
-        </div>
-
-      </div>
       <div class="export-wrapper">
-        <button class="save-button-gif">Export as .gif</button>
-        <button class="save-button-apng">Export as .apng</button>
+        <div class="save-buttons">
+          <button class="save-button-gif">Export as .gif</button>
+          <button class="save-button-apng">Export as .apng</button>
+        </div>
+        <div class="save-size">
+          <select id="save-gif-scale">
+            <option value="1">Scale size * 1</option>
+            <option value="2">Scale size * 2</option>
+            <option value="3">Scale size * 3</option>
+            <option value="4">Scale size * 4</option>
+            <option value="5">Scale size * 5</option>
+          </select>
+        </div>
       </div>
     </div>
 
